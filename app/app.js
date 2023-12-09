@@ -7,7 +7,7 @@ app.use(cors());
 
 // Ceci est une route pour dire boujour
 app.get("/", (req, res) => {
-  res.json("Bienvenue sur mon serveur API Travel");
+  res.json("Bienvenue sur mon serveur API Travel - React Native");
 });
 app.use("/api/auth", require("../server/routes/Auth.Routes"));
 app.use(
