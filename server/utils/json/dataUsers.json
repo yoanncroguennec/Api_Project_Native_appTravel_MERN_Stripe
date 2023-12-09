@@ -1,0 +1,46 @@
+[
+  {
+    "email": "yoann.croguennec@gmail.com",
+    "desc": "Les États-Unis sont un pôle d'attraction touristique, connu pour la diversité de ses paysages, la richesse de son histoire et l'effervescence de sa culture. Des plages ensoleillées de Californie aux rues animées de New York, il y en a pour tous les goûts.Les États-Unis sont un pôle d'attraction touristique, connu pour la diversité de ses paysages, la richesse de son histoire et l'éclat de sa culture. Des plages ensoleillées de Californie aux rues animées de New York, il y en a pour tous les goûts.Les États-Unis sont un pôle d'attraction touristique, connu pour la diversité de ses paysages, la richesse de son histoire et l'éclat de sa culture. Des plages ensoleillées de Californie aux rues animées de New York, il y en a pour tous les goûts.Les États-Unis sont un pôle d'attraction touristique, connu pour la diversité de ses paysages, la richesse de son histoire et l'éclat de sa culture. Des plages ensoleillées de Californie aux rues animées de New York, il y en a pour tous les goûts.",
+    "imageUrl":
+      "https://d326fntlu7tb1e.cloudfront.net/uploads/1bcdbbd0-d702-475d-92ea-d9171c041674-vinci_01_places_new_york.jpg",
+    "region": "Nord Amerique, États-Unis",
+    "popular": ["", ""]
+  },
+  {
+    "country": "Inde",
+    "desc": "L'Inde est un pays vaste et diversifié situé en Asie du Sud. Elle est connue pour son patrimoine culturel, ses sites historiques et sa variété géographique. Le pays s'enorgueillit d'une histoire riche qui remonte à des milliers d'années, avec des influences de diverses civilisations. Les paysages de l'Inde vont des sommets enneigés de l'Himalaya à la verdure luxuriante des backwaters du Kerala. Le Taj Mahal, les palais de Jaipur et les temples anciens de Varanasi ne sont que quelques-uns des sites emblématiques du pays. La cuisine indienne, célèbre dans le monde entier, offre une symphonie de saveurs et d'épices. Avec ses villes animées, ses villages sereins et ses festivals colorés, l'Inde offre aux voyageurs un kaléidoscope d'expériences.",
+    "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/f39f32a0-f484-4b4f-b8c4-3e8405743a20-vinci_02_india.jpg",
+    "region": "Sud de l'Asie, Inde",
+    "popular": ["", "", ""]
+  },
+  {
+    "country": "France",
+    "desc": "La France, située en Europe occidentale, est réputée pour son art, sa culture et son histoire. Elle abrite des monuments emblématiques tels que la tour Eiffel, le musée du Louvre et la cathédrale Notre-Dame. La capitale du pays, Paris, est connue comme la 'ville de l'amour' et est un centre de la mode, de la cuisine et de l'art. La campagne française est parsemée de charmants villages, de vignobles et de paysages pittoresques. La cuisine française est célébrée dans le monde entier et propose des délices gastronomiques tels que les croissants, le fromage et le vin. Le pays a une histoire riche qui s'étend de la préhistoire à l'ère moderne, laissant derrière elle un héritage fascinant. La culture française, qui met l'accent sur les arts, la littérature et la philosophie, a eu un impact profond sur le monde.",
+    "region": "Europe, France",
+    "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/22851342-00da-4764-8728-b6dd356e51c0-vinci_03_paris.jpg",
+    "popular": ["", "", ""]
+  },
+  {
+    "country": "Angleterre",
+    "desc": "L'Angleterre, pays du Royaume-Uni, est imprégnée d'histoire et de culture. Sa capitale, Londres, est une métropole animée connue pour ses sites emblématiques, notamment le Tower Bridge, le palais de Buckingham et le British Museum. La campagne anglaise est pittoresque, avec ses collines ondulantes, ses charmants villages et ses sites historiques tels que Stonehenge. Le pays possède un riche patrimoine littéraire, avec des auteurs célèbres comme William Shakespeare, Jane Austen et Charles Dickens, originaires de ses côtes. Les pubs anglais, le thé de l'après-midi et les événements traditionnels comme Wimbledon et la relève de la garde ajoutent à son charme unique. L'influence de l'Angleterre sur la politique, la littérature et le sport en a fait une puissance mondiale dont l'héritage est durable.",
+    "imageUrl": "https://images.unsplash.com/photo-1543832923-44667a44c804?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "region": "Europe, Angleterre",
+    "popular": ["", "", ""]
+  },
+  {
+    "country": "Chine",
+    "desc": "La Chine, le pays le plus peuplé du monde, est située en Asie de l'Est. Avec une histoire de plus de 5 000 ans, c'est l'une des plus anciennes civilisations ininterrompues. La Chine est connue pour la diversité de ses paysages, de la majestueuse Grande Muraille serpentant à travers les montagnes aux paysages karstiques époustouflants de Guilin. Ses villes animées, comme Pékin et Shanghai, présentent un mélange unique de traditions anciennes et d'innovations modernes. La culture chinoise est riche en art, en musique et en philosophie, avec des éléments emblématiques tels que la calligraphie, les cérémonies du thé et la médecine traditionnelle chinoise. La cuisine du pays, notamment le dim sum, le canard laqué et le hotpot du Sichuan, est célébrée dans le monde entier. Les contributions de la Chine à la science, à la technologie et à la littérature ont eu un impact profond sur le monde, faisant de ce pays une puissance mondiale dans divers domaines.",
+    "imageUrl":
+      "https://d326fntlu7tb1e.cloudfront.net/uploads/45e7d539-23c4-4b9a-91c8-1b0dec6e2ae9-vinci_04_china.jpg",
+    "region": "Asie, de l'est, Chine",
+    "popular": ["", "", ""]
+  },
+  {
+    "country": "Japon",
+    "desc": "Le Japon est un pays insulaire situé dans l'océan Pacifique. Il comporte des villes denses, des palais impériaux, des parcs nationaux montagneux ainsi que des milliers de temples et de sanctuaires. Les trains à grande vitesse Shinkansen relient les îles principales de Kyūshū (avec les plages subtropicales d'Okinawa), Honshū (où se trouvent Tokyo et le mémorial en hommage aux victimes du bombardement atomique d'Hiroshima) et Hokkaidō (prisée pour le ski). Tokyo, la capitale, est réputée pour ses gratte-ciel, ses magasins et sa culture populaire. ",
+    "imageUrl": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "region": "Asie, de l'est, Japon",
+    "popular": ["", ""]
+  }
+]
