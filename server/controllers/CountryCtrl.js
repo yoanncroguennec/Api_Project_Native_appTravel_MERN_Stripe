@@ -1,6 +1,27 @@
 const CountryModel = require("../models/Country");
 
 const countryCtrl = {
+  createCountry: async (req, res, next) => {
+    try {
+      const { country, desc, imageUrl, region, popular } = req.body;
+      // STEP 1 : Create New Country
+      const newCountry = new CountryModel({
+        country, // "country: req.body.country" la même chose que "country: country"
+        desc,
+        imageUrl,
+        region,
+        popular,
+      });
+
+      // STEP 2 : sauvegarder ce nouvel Country dans la BDD
+      await newCountry.save();
+      // ATTENTION !! Affiche le résultat sur Postman que quand on lance le server depuis l'api direct et non par la dépendance concurrently" de Front-end (client)
+      res.status(201).json(newCountry);
+    } catch (err) {
+      res.status(400).json({ message: err.message });
+    }
+  },
+
   getCountry: async (req, res, next) => {
     try {
       const country = await CountryModel.findById(req.params.id);

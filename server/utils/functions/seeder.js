@@ -6,24 +6,24 @@ mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGODB_URI);
 
 //  SERVER MODELS
-const Attraction = require("../../models/Attraction");
+const TouristAttractions = require("../../models/TouristAttraction");
 const Country = require("../../models/Country");
 const Hotel = require("../../models/Hotel");
 // UTILS DATAS JSON
-const attractions = require("../json/dataAttractions.json");
+const touristAttractions = require("../json/dataTouristAttractions.json");
 const countries = require("../json/dataCountries.json");
 const hotels = require("../json/dataHotels.json");
 
 const seeder = async () => {
     try {
-      /* *********************************************************************
-       **************************** SEED ATTRACTIONS **************************
-       ********************************************************************** */
-      await Attraction.deleteMany();
-      console.log("Les attractions ont été effacés");
+      /* ******************************************************************************
+       **************************** SEED TOURIST ATTRACTIONS **************************
+       ****************************************************************************** */
+      await TouristAttractions.deleteMany();
+      console.log("Les attractions touristiques ont été effacés");
 
-      await Attraction.insertMany(attractions);
-      console.log("Les attractions ont été ajoutés");
+      await TouristAttractions.insertMany(touristAttractions);
+      console.log("Les attractions touristiques ont été ajoutés");
 
       /* *******************************************************************
        ************************** SEED COUNTRIES **************************

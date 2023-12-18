@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const CountryModel = mongoose.model("Country", {
   country: {
     type: String,
-    unique: true,
+    // unique: true,
   },
   desc: {
     type: String,

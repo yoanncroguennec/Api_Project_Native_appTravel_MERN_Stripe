@@ -1,4 +1,3 @@
-// uid2 et crypto-js sont des packages qui vont nous servir à encrypter le mot de passe
 const uid2 = require("uid2");
 const SHA256 = require("crypto-js/sha256");
 const encBase64 = require("crypto-js/enc-base64");
@@ -16,7 +15,8 @@ const authCtrl = {
         if (
           // Les champs OBLIGATOIRE a remplir
           req.body.email &&
-          req.body.password
+          req.body.password &&
+          req.body.name
         ) {
           // STEP 1 : encrypter le mot de passe
           // Générer le token et encrypter le mot de passe
@@ -29,6 +29,7 @@ const authCtrl = {
           // STEP 2 : créer le nouvel utilisateur
           const newUser = new UserModel({
             email: req.body.email,
+            name: req.body.name,
             token: token,
             hash: hash,
             salt: salt,
@@ -39,6 +40,7 @@ const authCtrl = {
           // ATTENTION !! Affiche le résultat sur Postman que quand on lance le server depuis l'api direct et non par la dépendance concurrently"" de Front-end (client)
           res.status(201).json({
             _id: newUser._id,
+            name: newUser.name,
             email: newUser.email,
             token: newUser.token,
           });
@@ -70,7 +72,7 @@ const authCtrl = {
           res.status(200).json({
             _id: user._id,
             token: user.token,
-            email: user.email,
+            account: user.account,
           });
         } else {
           res.status(401).json({ error: "Unauthorized" });
