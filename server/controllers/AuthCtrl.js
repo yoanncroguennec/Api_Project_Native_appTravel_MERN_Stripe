@@ -6,59 +6,88 @@ const UserModel = require("../models/User");
 
 const authCtrl = {
   signup: async (req, res, next) => {
-    try {
-      const user = await UserModel.findOne({ email: req.body.email });
-      if (user) {
-        res.status(409).json({ message: "Cette email est déjà prise." });
-      } else {
-        // l'user a bien envoyé les infos requises ?
-        if (
-          // Les champs OBLIGATOIRE a remplir
-          req.body.email &&
-          req.body.password &&
-          req.body.name
-        ) {
-          // STEP 1 : encrypter le mot de passe
-          // Générer le token et encrypter le mot de passe
-          const token = uid2(64); // Génère Token qui fera 64 caractères de long
-          const salt = uid2(64); // Génère Salt qui fera 64 caractères de long
-          // On concatène le "salt" avec le "passord"
-          // "encBase64" Donner en argument
-          const hash = SHA256(req.body.password + salt).toString(encBase64);
+	try {
+    //? Destructuring
+    const {
+      username,
+      email,
+      password,
+      // firstName,
+      // lastName,
+      // dob,
+      // postalAddress,
+      // postalCode,
+      // city,
+      // phoneNumber,
+    } = req.body;
 
-          // STEP 2 : créer le nouvel utilisateur
-          const newUser = new UserModel({
-            email: req.body.email,
-            name: req.body.name,
-            token: token,
-            hash: hash,
-            salt: salt,
-          });
-
-          // STEP 3 : sauvegarder ce nouvel user dans la BDD
-          await newUser.save();
-          // ATTENTION !! Affiche le résultat sur Postman que quand on lance le server depuis l'api direct et non par la dépendance concurrently"" de Front-end (client)
-          res.status(201).json({
-            _id: newUser._id,
-            name: newUser.name,
-            email: newUser.email,
-            token: newUser.token,
-          });
-          // return res.status(400).json(res);
-          // res.json(res);
-        } else {
-          // l'utilisateur n'a pas envoyé les informations requises ?
-          res.status(400).json({ message: "Missing parameters" });
-        }
-      }
-    } catch (err) {
-      res.status(400).json({ message: err.message });
+    const isEmailAlreadyExist = await UserModel.findOne({ email });
+    //console.log(email, isEmailAlreadyExist);
+    if (isEmailAlreadyExist) {
+      return res
+        .status(409)
+        .json({ message: "This email already has an account" });
     }
+
+    const isPassword = await UserModel.findOne({ password });
+    //console.log(email, isEmailAlreadyExist);
+    if (isPassword) {
+      return res
+        .status(409)
+        .json({ message: "This email already has an account" });
+    }
+
+    //todo cas d'erreur, le username n'est pas renseigné
+    if (username === "" || username === undefined) {
+      return res.status(400).json({ message: "Missing parameters" });
+    }
+
+    if (email && password && username) {
+      const salt = uid2(16);
+      //console.log("salt: ", salt);
+      const hash = SHA256(password + salt).toString(encBase64);
+      //console.log("hash: ", hash);
+      const token = uid2(64);
+      //console.log("token: ", token);
+
+      const newUser = new UserModel({
+        account: {
+          username,
+          email,
+          // firstName,
+          // lastName,
+          // dob,
+          // postalAddress,
+          // postalCode,
+          // city,
+          // phoneNumber,
+        },
+        salt,
+        hash,
+        token,
+      });
+
+      // Étape 3 : sauvegarder ce nouvel utilisateur dans la BDD
+      await newUser.save();
+      const response = {
+        _id: newUser._id,
+        account: newUser.account,
+        token: newUser.token,
+      };
+      res.status(200).json(response);
+    } else {
+      // l'utilisateur n'a pas envoyé les informations requises ?
+      res.status(400).json({ message: "Missing parameters" });
+    }
+  } catch (error) {
+    console.log(error.message);
+    res.status(400).json({ message: error.message });
+  }
   },
 
-  ////////
-  // LOGIN
-  ////////
+  /////////////////////////////
+  ///////// CONNEXION /////////
+  /////////////////////////////
   login: async (req, res, next) => {
     try {
       const user = await UserModel.findOne({ email: req.body.email });

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const CountryModel = mongoose.model("Country", {
-  country: {
+  title: {
     type: String,
     // unique: true,
   },
@@ -11,7 +11,7 @@ const CountryModel = mongoose.model("Country", {
   imageUrl: {
     type: String,
   },
-  region: {
+  location: {
     type: String,
   },
   popular: {

@@ -3,13 +3,13 @@ const CountryModel = require("../models/Country");
 const countryCtrl = {
   createCountry: async (req, res, next) => {
     try {
-      const { country, desc, imageUrl, region, popular } = req.body;
+      const { title, desc, imageUrl, location, popular } = req.body;
       // STEP 1 : Create New Country
       const newCountry = new CountryModel({
-        country, // "country: req.body.country" la même chose que "country: country"
+        title, // "title: req.body.title" la même chose que "title: title"
         desc,
         imageUrl,
-        region,
+        location,
         popular,
       });
 

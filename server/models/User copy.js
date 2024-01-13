@@ -1,10 +1,20 @@
 const mongoose = require("mongoose");
 
+// {
+// "email": "yoann.crogennec@gmail.com",
+// "name": "yoann",
+// "dob": "10/05/1986",
+// "password": "95449544"
+// }
 
 const UserModel = mongoose.model("User", {
   token: String,
   hash: String,
   salt: String,
+      dob: {
+      type: String,
+      // required: true,
+    },
   account: {
     username: {
       type: String,
@@ -13,7 +23,6 @@ const UserModel = mongoose.model("User", {
     },
     email: {
       type: String,
-      // require: true,
       required: "Entrez votre email",
       unique: true,
     },
@@ -21,33 +30,33 @@ const UserModel = mongoose.model("User", {
       type: Object,
       default: null,
     },
-    // firstName: {
-    //   type: String,
-    //   required: "Entrez votre prénom",
-    // },
-    // lastName: {
-    //   type: String,
-    //   required: "Entrez votre nom de famille",
-    // },
+    firstName: {
+      type: String,
+      required: "Entrez votre prénom",
+    },
+    lastName: {
+      type: String,
+      required: "Entrez votre nom de famille",
+    },
     // dob: {
     //   type: String,
-    //   required: true,
+    //   // required: true,
     // },
     // postalAddress: {
     //   type: String,
-    //   required: true,
+    //   // required: true,
     // },
     // postalCode: {
-    //   type: String,
-    //   required: true,
+    //   type: Number,
+    //   // required: true,
     // },
     // city: {
     //   type: String,
-    //   required: true,
+    //   // required: true,
     // },
     // phoneNumber: {
-    //   type: String,
-    //   required: true,
+    //   type: Number,
+    //   // required: true,
     // },
   },
   orders: [
