@@ -10,7 +10,7 @@ const authCtrl = {
     //? Destructuring
     const {
       username,
-      email,
+      // email,
       password,
       // firstName,
       // lastName,
@@ -21,13 +21,13 @@ const authCtrl = {
       // phoneNumber,
     } = req.body;
 
-    const isEmailAlreadyExist = await UserModel.findOne({ email });
-    //console.log(email, isEmailAlreadyExist);
-    if (isEmailAlreadyExist) {
-      return res
-        .status(409)
-        .json({ message: "This email already has an account" });
-    }
+    // const isEmailAlreadyExist = await UserModel.findOne({ email });
+    // //console.log(email, isEmailAlreadyExist);
+    // if (isEmailAlreadyExist) {
+    //   return res
+    //     .status(409)
+    //     .json({ message: "This email already has an account" });
+    // }
 
     const isPassword = await UserModel.findOne({ password });
     //console.log(email, isEmailAlreadyExist);
@@ -42,7 +42,7 @@ const authCtrl = {
       return res.status(400).json({ message: "Missing parameters" });
     }
 
-    if (email && password && username) {
+    if (password && username) {
       const salt = uid2(16);
       //console.log("salt: ", salt);
       const hash = SHA256(password + salt).toString(encBase64);
@@ -53,7 +53,7 @@ const authCtrl = {
       const newUser = new UserModel({
         account: {
           username,
-          email,
+          // email,
           // firstName,
           // lastName,
           // dob,

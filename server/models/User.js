@@ -9,14 +9,14 @@ const UserModel = mongoose.model("User", {
     username: {
       type: String,
       required: "Entrez votre pseudo",
-      unique: true,
+      // unique: true,
     },
-    email: {
-      type: String,
-      // require: true,
-      required: "Entrez votre email",
-      unique: true,
-    },
+    // email: {
+    //   type: String,
+    //   require: true,
+    //   // required: "Entrez votre email",
+    //   // unique: true,
+    // },
     photo: {
       type: Object,
       default: null,
