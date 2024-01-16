@@ -2,7 +2,7 @@ const uid2 = require("uid2");
 const SHA256 = require("crypto-js/sha256");
 const encBase64 = require("crypto-js/enc-base64");
 // MODELS
-const UserModel = require("../models/User");
+const UserModel = require("../../models/User");
 
 const authCtrl = {
   signup: async (req, res, next) => {
@@ -138,20 +138,20 @@ const authCtrl = {
   //         await newUser.save();
   //         // ATTENTION !! Affiche le résultat sur Postman que quand on lance le server depuis l'api direct et non par la dépendance concurrently"" de Front-end (client)
   //         res.status(201).json({
-            // // id: newUser._id,
-            // // token: newUser.token,
-            // // orders: newUser.orders,
-            // // // SECTION ACCOUNT
-            // email: newUser.account.username,
-            // // username: newUser.account.email,
-            // // photo: newUser.account.photo,
-            // // firstName: newUser.account.firstName,
-            // // lastName: newUser.account.lastName,
-            // // dob: newUser.account.dob,
-            // // postalAddress: newUser.account.postalAddress,
-            // // postalCode: newUser.account.postalCode,
-            // // city: newUser.account.city,
-            // // phoneNumber: newUser.account.phoneNumber,
+  // // id: newUser._id,
+  // // token: newUser.token,
+  // // orders: newUser.orders,
+  // // // SECTION ACCOUNT
+  // email: newUser.account.username,
+  // // username: newUser.account.email,
+  // // photo: newUser.account.photo,
+  // // firstName: newUser.account.firstName,
+  // // lastName: newUser.account.lastName,
+  // // dob: newUser.account.dob,
+  // // postalAddress: newUser.account.postalAddress,
+  // // postalCode: newUser.account.postalCode,
+  // // city: newUser.account.city,
+  // // phoneNumber: newUser.account.phoneNumber,
   //         });
   //         // return res.status(400).json(res);
   //         // res.json(res);

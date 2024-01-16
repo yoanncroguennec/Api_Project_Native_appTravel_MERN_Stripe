@@ -2,7 +2,7 @@ const uid2 = require("uid2");
 const SHA256 = require("crypto-js/sha256");
 const encBase64 = require("crypto-js/enc-base64");
 // MODELS
-const UserModel = require("../models/User");
+const UserModel = require("../../models/User");
 
 const authCtrl = {
   signup: async (req, res, next) => {

@@ -10,15 +10,15 @@ const authCtrl = {
     //? Destructuring
     const {
       username,
-      // email,
+      email,
       password,
-      // firstName,
-      // lastName,
-      // dob,
-      // postalAddress,
-      // postalCode,
-      // city,
-      // phoneNumber,
+      firstName,
+      lastName,
+      dob,
+      postalAddress,
+      postalCode,
+      city,
+      phoneNumber,
     } = req.body;
 
     // const isEmailAlreadyExist = await UserModel.findOne({ email });
@@ -53,14 +53,14 @@ const authCtrl = {
       const newUser = new UserModel({
         account: {
           username,
-          // email,
-          // firstName,
-          // lastName,
-          // dob,
-          // postalAddress,
-          // postalCode,
-          // city,
-          // phoneNumber,
+          email,
+          firstName,
+          lastName,
+          dob,
+          postalAddress,
+          postalCode,
+          city,
+          phoneNumber,
         },
         salt,
         hash,
